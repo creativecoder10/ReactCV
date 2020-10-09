@@ -31,9 +31,6 @@ const textContainer = {
 };
 
 
- 
-
-
 
 const styles = {
   bounce: {
@@ -62,15 +59,15 @@ const styles = {
   },
 };
 
-
-const  data =
+const data = 
   <StyleRoot>
     <div style={styles.fadeInRight} className="textContainer">
       <div style={styles.bounce} className="text">
         I am Deepesh
       </div>
     </div>
-  </StyleRoot>;
+  </StyleRoot>
+;
 
 class Home extends React.Component {
   scrollTo() {
@@ -78,10 +75,9 @@ class Home extends React.Component {
   }
 
   render() {
-    // var { classes } = this.props;
-    return props => (
+    var { classes } = this.props;
+    return (
       <div>
-      {console.log ("props",this.props)};
         <Demo  />
 
         {/* <div>home page</div> */}
