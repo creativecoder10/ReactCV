@@ -11,6 +11,8 @@ import Header from "./Components/Header";
 import Study from './Pages/Study';
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import { Redirect, Link, Route, Switch } from "react-router-dom";
+import Demo from "./Components/demo";
+
 
 function mapStyles(styles) {
   return {
@@ -50,7 +52,7 @@ class App extends React.Component{
 
   render(){
     return (<BrowserRouter><div className="wrapper"><div className="container"> 
-     
+    <Demo /> 
           
    <AnimatedSwitch
     {...topBarTransitions}

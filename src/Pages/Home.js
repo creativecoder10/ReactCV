@@ -8,6 +8,7 @@ import { bounce } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 import "../App.css";
 import Demo from "../Components/demo";
+import Typewriter from "typewriter-effect";
 
 // import { withStyles } from 'material-ui/styles';
 // import Typography from 'material-ui/Typography';
@@ -24,13 +25,10 @@ import fadeInRight from "react-animations/lib/fade-in-right";
 import { blue } from "@material-ui/core/colors";
 // import { Avatar } from '@material-ui/core';
 
-
 const textContainer = {
   width: 50,
   background: blue,
 };
-
-
 
 const styles = {
   bounce: {
@@ -59,16 +57,38 @@ const styles = {
   },
 };
 
-const data = 
+const data = (
   <StyleRoot>
     <div style={styles.fadeInRight} className="textContainer">
-      <div style={styles.bounce} className="text">
+      <Typewriter
+        onInit={(typewriter) => {
+          typewriter
+            .typeString("<h1> Hello World!</h1>")
+            .callFunction(() => {
+              console.log("String typed out!");
+            })
+            .pauseFor(2500)
+            .deleteAll()
+            .callFunction(() => {
+              console.log("All strings were deleted");
+            })
+            .typeString("<h1>My name is Deepesh</h1>")
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString("<h1> Working in IT for over 13 years now</h1> &nbsp")
+            .typeString("yes, 13 - unlucky for some")
+
+            
+            .start();
+        }}
+      />
+     {/* <div style={styles.bounce} className="text">
         I am Deepesh
       </div>
+      */}
     </div>
   </StyleRoot>
-;
-
+);
 class Home extends React.Component {
   scrollTo() {
     scroll.scrollTo(100);
@@ -78,7 +98,7 @@ class Home extends React.Component {
     var { classes } = this.props;
     return (
       <div>
-        <Demo  />
+       {/*} <Demo about={data} />
 
         {/* <div>home page</div> */}
         {/* <div className={classes.section}>
